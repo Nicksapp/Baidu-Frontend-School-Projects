@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自定义checkbox,radio样式</title>
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+    }
+    input {
+      display: none;
+    }
+    .main {
+      width: 300px;
+      margin: 100px auto;
+    }
+    .checkbox {
+      margin-bottom: 30px;
+    }
+    .myCheckbox+label, .myRadio+label {
+      width: 16px;
+      height: 16px;
+      border: 1px solid #e9e9e9;
+      display: flex;
+    }
+    .myCheckbox:checked+label, .myRadio:checked+label {
+      border: 1px solid #d73d32;
+    }
+    .myCheckbox:checked+label::after, .myRadio:checked+label::after {
+      margin: auto;
+      content: '\2714';
+      color: red;
+      width: 8px;
+      height: 8px;
+      line-height: 8px;
+      text-align: center;
+      font-size: .75em;
+    }
+    /*radio*/
+    .radio {
+      display: flex;
+      width: 50px;
+      justify-content: space-between;
+    }
+    .myRadio+label {
+      border-radius: 50%;
+    }
+    .myRadio:checked+label::after {
+      border-radius: 50%;
+      width: 8px;
+      height: 8px;
+      line-height: 8px;
+      content: '';
+      background-color: #d73d32;
+    }
+
+    /*雪碧图*/
+    .checkbox_s+label,.radio_s+label {
+      width: 16px;
+      height: 16px;
+      border: none;
+      background: url('./img.png') no-repeat;
+      display: inline-block;
+    }
+    .checkbox_s+label {
+      background-position: -25px -32px;
+    }
+    .radio_s+label {
+      background-position: -24px -10px;
+    }
+    .checkbox_s:checked+label {
+      background-position: -60px -32px;
+    }
+    .radio_s:checked+label {
+      background-position: -59px -10px;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="main">
+  <h2>伪类实现：</h2>
+  <div class="checkbox">
+    <input type="checkbox" name="checkbox" id="checkbox" class="myCheckbox" value="">
+    <label for="checkbox"></label>
+  </div>
+  <div class="radio">
+    <input type="radio" name="choose" id="radio1" class="myRadio" value="">
+    <label for="radio1"></label>
+    <input type="radio" name="choose" id="radio2" class="myRadio" value="">
+    <label for="radio2"></label>
+  </div>
+
+  <h2>雪碧图实现：</h2>
+  <div class="checkbox">
+    <input type="checkbox" id="checkbox_s" class="checkbox_s">
+    <label for="checkbox_s"></label>
+  </div>
+  <div class="radio">
+    <input type="radio" id="radio_s" class="radio_s" name="choose2" value="">
+    <label for="radio_s"></label>
+    <input type="radio" id="radio_s_2" class="radio_s" name="choose2" value="">
+    <label for="radio_s_2"></label>
+  </div>
+</div>
+</body>
+</html>
