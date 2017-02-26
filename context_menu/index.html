@@ -6,13 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>my Context Menu</title>
   <style media="screen">
-    body {
-
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
     }
     #myMenu {
       border: 1px solid #666666;
       width: auto;
       position: absolute;
+      background-color: #fff;
       display: none;
     }
     ul {
@@ -27,9 +32,28 @@
     ul li:hover {
       background-color: #666666;
     }
+
+    #main {
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      background-color: lightblue;
+    }
+    .something {
+
+      line-height: 200px;
+      font-size: 22px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
+  <div id="main">
+    <p class="something">
+      right click to see menu
+    </p>
+  </div>
+
   <div id="myMenu">
     <ul>
       <li>Menu Item 1</li>
@@ -40,8 +64,9 @@
 
 
 <script>
+  var main = document.getElementById("main");
   var mymenu = document.getElementById("myMenu");
-  document.oncontextmenu = function (e) {
+  main.oncontextmenu = function (e) {
     var event = e || event;
     event.stopPropagation();
     // 右键点击x，y轴
