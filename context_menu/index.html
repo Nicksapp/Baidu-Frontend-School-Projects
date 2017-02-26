@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>my Context Menu</title>
+  <style media="screen">
+    body {
+
+    }
+    #myMenu {
+      border: 1px solid #666666;
+      width: auto;
+      position: absolute;
+      display: none;
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+    ul li {
+      list-style: none;
+      padding: 5px 35px 5px 15px;
+      cursor: pointer;
+    }
+    ul li:hover {
+      background-color: #666666;
+    }
+  </style>
+</head>
+<body>
+  <div id="myMenu">
+    <ul>
+      <li>Menu Item 1</li>
+      <li>Menu Item 2</li>
+      <li>Menu Item 3</li>
+    </ul>
+  </div>
+
+
+<script>
+  var mymenu = document.getElementById("myMenu");
+  document.oncontextmenu = function (e) {
+    var event = e || event;
+    event.stopPropagation();
+    // 右键点击x，y轴
+    var X = event.clientX;
+    var Y = event.clientY;
+    // 当前视图宽高
+    var clientWidth = document.body.clientWidth || document.documentElement.clientWidth;
+    var clientHeight = document.body.clientHeight || document.documentElement.clientHeight;
+    // 定义点击右键时弹出层x，y的坐标
+    mymenu.style.display = "block";
+    // 菜单栏宽高
+    var menuWidth = mymenu.offsetWidth;
+    var menuHeight = mymenu.offsetHeight;
+    // 判断鼠标点击右侧、下册空间是否充足，否则更改菜单栏出现位置
+    if (X > (clientWidth - menuWidth) && Y > (clientHeight - menuHeight)) {
+      mymenu.style.left = document.body.scrollLeft + X - menuWidth + 'px';
+      mymenu.style.top = document.body.scrollTop + Y - menuHeight + 'px';
+    } else if (X > (clientWidth - menuWidth)) {
+      mymenu.style.left = document.body.scrollLeft + X - menuWidth + 'px';
+      mymenu.style.top = document.body.scrollTop + Y + 'px';
+    } else if (Y > (clientHeight - menuHeight)){
+      mymenu.style.left = document.body.scrollLeft + X + 'px';
+      mymenu.style.top = document.body.scrollTop + Y  - menuHeight + 'px';
+    } else {
+      mymenu.style.left = document.body.scrollLeft + X + 'px';
+      mymenu.style.top = document.body.scrollTop + Y + 'px';
+    }
+    return false; // 屏蔽真正的右键菜单显示
+  }
+  document.onclick = function () {
+    if (document.activeElement != mymenu) {
+      mymenu.style.display = "none"
+    }
+  }
+
+</script>
+</body>
+</html>
