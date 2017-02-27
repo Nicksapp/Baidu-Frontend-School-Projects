@@ -4,3 +4,4 @@
 
 * [自定义checkbox， radio样式](http://nickgo.net/Baidu-Frontend-School-Projects/checkbox_and_radio/)
 * [自定义网页右键菜单](http://nickgo.net/Baidu-Frontend-School-Projects/context_menu)
+* [正则表达式之入门](http://nickgo.net/Baidu-Frontend-School-Projects/regexp_javascript)

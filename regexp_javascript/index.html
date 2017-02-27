@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式</title>
+    <style media="screen">
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            /*align-items: center;*/
+            margin-top: 200px;
+        }
+
+        label {
+            margin-bottom: 50px;
+        }
+
+        input {
+            width: 160px;
+            height: 20px;
+        }
+
+        #phone-info,
+        #text-info {
+            color: red;
+            font-size: .75em;
+            /*display:none;*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+      <p> 1.编写一个判断给定数字是否为手机号码的正则表达式</p>
+      <label for="">
+        请输入你的手机号码:
+        <input onkeyup="checkPhone()" type="number" id="phone">
+        <button onclick="checkPhone()">提交</button>
+        <span id="phone-info"></span>
+      </label>
+      <p> 2.编写一个判断输入的字符串是否有相邻重复单词的正则表达式</p>
+      <label for="">
+        请输入一段字符串:
+        <input onkeyup="checkText()" id="myText" type="text" placeholder="我将判断是否有相邻重复单词">
+        <button onclick="checkText()">提交</button>
+        <span id="text-info"></span>
+      </label>
+    </div>
+
+
+    <script>
+        function checkPhone() {
+            var phone = document.getElementById("phone").value;
+            var phoneInfo = document.getElementById("phone-info");
+            // 手机号格式第一位1开头,第二位有3,4,5,7,8,之后数字为0-9
+            var reg_phone = /^1[3|4|5|7|8]\d{9}$/;
+            if (!reg_phone.test(phone)) {
+                phoneInfo.style.color = "red";
+                phoneInfo.innerHTML = "你输入的手机号码错误，请检查！";
+                return false;
+            } else {
+                phoneInfo.style.color = "green";
+                phoneInfo.innerHTML = "手机号码格式输入正确";
+                return true;
+            }
+        }
+
+        function checkText() {
+            var reg_text = /\b([A-Za-z]+)\s+([A-Za-z]+)\s+(\1)\b/;
+            var text = document.getElementById("myText").value;
+            var textInfo = document.getElementById("text-info");
+
+            if (!reg_text.test(text)) {
+                textInfo.style.color = "red";
+                textInfo.innerHTML = "输入字符不匹配"
+                return true;
+            } else {
+                textInfo.style.color = "green";
+                textInfo.innerHTML = "成功匹配"
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
