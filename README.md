@@ -6,3 +6,4 @@
 * [自定义网页右键菜单](http://nickgo.net/Baidu-Frontend-School-Projects/context_menu)
 * [正则表达式之入门](http://nickgo.net/Baidu-Frontend-School-Projects/regexp_javascript)
 * [有趣的鼠标悬浮模糊效果](http://nickgo.net/Baidu-Frontend-School-Projects/hover_animation)
+* [使用CSS实现折叠面板](http://nickgo.net/Baidu-Frontend-School-Projects/collapsible_group)

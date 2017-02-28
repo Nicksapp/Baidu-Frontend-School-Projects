@@ -1,0 +1,61 @@
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body, div, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6, small, pre, code,
+form, fieldset, legend, input, button,
+textarea, p, blockquote, th, td, figure, figcaption {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-family: "Segoe UI", 'Microsoft Yahei', Helvetica, Arial; }
+
+a, a:hover, a:active, a:focus, input, input:hover, input:active, input:focus {
+  outline: none; }
+
+ul, ol {
+  list-style: none; }
+
+html, body {
+  width: 100%; }
+
+.container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px; }
+  .container .item.item:hover .my-item, .container .item.collapse-item:hover .my-item {
+    height: 153px;
+    border: #ddd 1px solid;
+      border-radius: 0 0 5px 5px; }
+  .container .item .collapse-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    border: #ddd 1px solid;
+      border-radius: 5px 5px 0 0;
+    color: #333;
+    font-weight: 600;
+    display: block;
+    background-color: #f5f5f5;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease; }
+    .container .item .collapse-item :hover {
+      background-color: #fff; }
+  .container .item .my-item {
+    height: 0;
+    font-size: 1em;
+    line-height: 1.2em;
+    color: #333;
+    font-weight: lighter;
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: height .25s ease;
+    -moz-transition: height .25s ease;
+    transition: height .25s ease; }
+    .container .item .my-item p {
+      margin: 10px 15px; }
+
+/*# sourceMappingURL=style.css.map */

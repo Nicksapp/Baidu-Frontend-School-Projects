@@ -1,0 +1,62 @@
+@import "../public/scss/reset";
+
+$collapse-item-bgc: #f5f5f5;
+$font-color: #333;
+
+@mixin my-item-transition {
+  -webkit-transition: height .25s ease;
+  -moz-transition: height .25s ease;
+  transition: height .25s ease;
+}
+@mixin collapse-item-transition {
+  -webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+html, body {
+  width: 100%;
+}
+
+.container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px;
+  .item{
+    &.item:hover .my-item, &.collapse-item:hover .my-item {
+      height: 153px;
+      border: #ddd 1px solid {
+        radius: 0 0 5px 5px;
+      }
+    }
+    .collapse-item {
+      padding: 10px 15px;
+      cursor: pointer;
+      border: #ddd 1px solid {
+        radius: 5px 5px 0 0;
+      }
+      color: $font-color;
+      font-weight: 600;
+      display: block;
+      background-color: $collapse-item-bgc;
+      @include collapse-item-transition;
+      :hover {
+        background-color: #fff;
+      }
+    }
+    .my-item {
+      height: 0;
+      font-size: 1em;
+      line-height: 1.2em;
+      color: $font-color;
+      font-weight: lighter;
+      // padding: 15px 10px;
+      position: relative;
+      overflow: hidden;
+      @include my-item-transition;
+      p {
+        margin: 10px 15px;
+      }
+    }
+  }
+}
