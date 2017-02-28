@@ -24,7 +24,7 @@ html, body {
   padding: 10px;
   .item{
     &.item:hover .my-item, &.collapse-item:hover .my-item {
-      height: 153px;
+      height: 125px;
       border: #ddd 1px solid {
         radius: 0 0 5px 5px;
       }

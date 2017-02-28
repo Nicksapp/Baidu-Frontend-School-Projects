@@ -27,7 +27,7 @@ html, body {
   margin: 20px auto;
   padding: 10px; }
   .container .item.item:hover .my-item, .container .item.collapse-item:hover .my-item {
-    height: 153px;
+    height: 125px;
     border: #ddd 1px solid;
       border-radius: 0 0 5px 5px; }
   .container .item .collapse-item {
