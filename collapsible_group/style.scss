@@ -59,4 +59,39 @@ html, body {
       }
     }
   }
+
+  .my-radio {
+    display: none;
+    &:checked + .my-section {
+      height: 180px;
+      .content {
+        border-top: 1px solid #ddd;
+      }
+    }
+  }
+  .my-section {
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    background-color: $collapse-item-bgc;
+    @include my-item-transition;
+    border: #ddd 1px solid {
+      radius: 5px 5px 0 0;
+    }
+    label {
+      display: inline-block;
+      margin-left: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .my-content {
+      height: 150px;
+      padding: 0 8px;
+      background-color: #fff;
+    }
+  }
+
 }

@@ -57,5 +57,32 @@ html, body {
     transition: height .25s ease; }
     .container .item .my-item p {
       margin: 10px 15px; }
+  .container .my-radio {
+    display: none; }
+    .container .my-radio:checked + .my-section {
+      height: 180px; }
+      .container .my-radio:checked + .my-section .content {
+        border-top: 1px solid #ddd; }
+  .container .my-section {
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    -webkit-transition: height .25s ease;
+    -moz-transition: height .25s ease;
+    transition: height .25s ease;
+    border: #ddd 1px solid;
+      border-radius: 5px 5px 0 0; }
+    .container .my-section label {
+      display: inline-block;
+      margin-left: 8px;
+      font-weight: 600;
+      cursor: pointer; }
+      .container .my-section label:hover {
+        text-decoration: underline; }
+    .container .my-section .my-content {
+      height: 150px;
+      padding: 0 8px;
+      background-color: #fff; }
 
 /*# sourceMappingURL=style.css.map */
