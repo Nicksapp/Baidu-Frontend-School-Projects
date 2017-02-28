@@ -1,0 +1,149 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.main-container {
+  width: 750px;
+  height: 530px;
+  margin: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  width: 640px;
+  height: 420px;
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.my-title, .my-submit {
+  text-decoration: none;
+  font-size: 2.2em;
+  font-weight: 900;
+  z-index: 100;
+  margin-bottom: 20px;
+}
+.main-img {
+  width: 750px;
+  height: 530px;
+  position: relative;
+  background: url('http://of30nsqpd.bkt.clouddn.com/backgroundtumblr_ofwd4vamtc1qkprgpo1_1280.gif') no-repeat;
+}
+
+.main-container:hover .blur {
+  filter: url(blur.svg#blur);
+  -webkit-filter: blur(8px);
+  -moz-filter: blur(8px);
+  -ms-filter: blur(8px);
+  filter: blur(8px);
+  transition: .5s all;
+}
+
+/*点击进入字体效果*/
+.my-submit {
+  cursor: pointer;
+  visibility: hidden;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#560a9b), to(#9e158f));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.my-submit:hover {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#003f77), to(#05c4b5));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  transition: .5s all;
+}
+.main-container:hover .my-submit{
+  visibility: visible;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: .5s; /*动画持续时间*/
+  -webkit-animation-iteration-count: 1; /*动画次数*/
+  -webkit-animation-delay: 0s; /*延迟时间*/
+}
+/*title文字流光效果*/
+.my-title {
+  visibility: hidden;
+  cursor: default;
+    background: -webkit-linear-gradient(left,#f00,#ff0 25%,#0f0 40%,#0ff 55%,#00f 70%,#f00);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-background-size: 200% 100%;
+      -webkit-animation: title-animation 5s infinite linear;
+}
+.main-container:hover .my-title {
+  visibility: visible;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: .5s; /*动画持续时间*/
+  -webkit-animation-iteration-count: 1; /*动画次数*/
+  -webkit-animation-delay: 0s; /*延迟时间*/
+
+}
+@-webkit-keyframes title-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/*边框动画*/
+.main::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 0;
+  border: 4px solid #eeeedd;
+  overflow: hidden;
+  border-width: 0 4px;
+  visibility: hidden;
+  transition: all .5s;
+  box-sizing: border-box;
+}
+.main::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 0;
+  height: 100%;
+  border: 5px solid #eeeedd;
+  overflow: hidden;
+  border-width: 5px 0;
+  visibility: hidden;
+  transition: all .5s;
+  box-sizing: border-box;
+}
+.main-container:hover .main::before {
+height: 100%;
+visibility: visible;
+top: 0;
+}
+.main-container:hover .main::after {
+width: 100%;
+visibility: visible;
+left: 0;
+}
+
+@-webkit-keyframes fadeIn {
+0% {
+opacity: 0; /*初始状态 透明度为0*/
+}
+50% {
+opacity: 0; /*中间状态 透明度为0*/
+}
+100% {
+opacity: 1; /*结尾状态 透明度为1*/
+}
+}
