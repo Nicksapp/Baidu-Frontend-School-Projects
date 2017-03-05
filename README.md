@@ -8,3 +8,4 @@
 * [有趣的鼠标悬浮模糊效果](http://nickgo.net/Baidu-Frontend-School-Projects/hover_animation)
 * [使用CSS实现折叠面板](http://nickgo.net/Baidu-Frontend-School-Projects/collapsible_group)
 * [动态数据绑定(一)](http://nickgo.net/Baidu-Frontend-School-Projects/data_binding_1)
+* [动态数据绑定(二)](http://nickgo.net/Baidu-Frontend-School-Projects/data_binding_2)
