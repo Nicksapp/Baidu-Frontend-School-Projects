@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- <script src="./script.js"></script> -->
+  <script src="./observer.js"></script>
+  <script src="./watcher.js"></script>
+  <script src="./compile.js"></script>
+  <script src="./mvvm.js"></script>
+</head>
+<body>
+  <div id="mvvm-app">
+    <input type="text" v-model = "word">
+    <p>{{word}}</p>
+    <button v-on:click="sayHi">change model</button>
+  </div>
+
+  <script>
+    var vm = new MVVM({
+      el: '#mvvm-app',
+      data: {
+        word: 'hello world'
+      },
+      methods: {
+        sayHi: function () {
+          this.word = 'Hi, everybody!'
+        }
+      }
+    })
+
+    vm.$watch('word', function() {
+      console.log('word has changed');
+    })
+  </script>
+
+</body>
+</html>
